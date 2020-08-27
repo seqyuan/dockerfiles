@@ -16,7 +16,8 @@ RUN yum install -y make gcc && \
 		curl -o fqtools_plus-master.zip https://codeload.github.com/seqyuan/fqtools_plus/zip/master && \
 		unzip fqtools_plus-master.zip && cd fqtools_plus-master && make && \
 		echo "export PATH=/bin/fqtools_plus:\$PATH" >> ~/.bashrc && \
-		cd ../ && rm zlib-1.2.11.tar.gz pigz-2.4.tar.gz fqtools_plus-master.zip
+		cd ../ && rm zlib-1.2.11.tar.gz pigz-2.4.tar.gz fqtools_plus-master.zip && \
+		mv fqtools_plus /bin/
 
 ADD passwd /etc/
 ADD group /etc/
@@ -24,4 +25,4 @@ ADD group /etc/
 
 v1.2.0
 
-/usr/bin/fqtools_plus-master/src/fqtools_plus
+/bin/fqtools_plus
