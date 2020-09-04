@@ -6,3 +6,5 @@ WORKDIR /bin
 
 RUN wget http://opengene.org/fastp/fastp && chmod a+x ./fastp 
 
+ADD passwd /etc/
+ADD group /etc/
