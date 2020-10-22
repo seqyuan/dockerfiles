@@ -11,3 +11,5 @@ sudo docker run --rm -p 1900:3838 \
 
 浏览器地址栏载入: `docker服务所在IP:1900`即可访问
 
+参考：[rocker-org/shiny](https://github.com/rocker-org/shiny)
+
