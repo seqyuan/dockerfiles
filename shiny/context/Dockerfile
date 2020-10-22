@@ -27,9 +27,8 @@ RUN wget --no-verbose https://download3.rstudio.org/ubuntu-14.04/x86_64/VERSION 
     wget --no-verbose "https://download3.rstudio.org/ubuntu-14.04/x86_64/shiny-server-$VERSION-amd64.deb" -O ss-latest.deb && \
     gdebi -n ss-latest.deb && \
     rm -f version.txt ss-latest.deb && \
-    . /etc/environment && \
-    cp -R /usr/local/lib/R/site-library/shiny/examples/* /srv/shiny-server/ && \
-    chown shiny:shiny /var/lib/shiny-server
+    . /etc/environment
+
 
 RUN R -e "install.packages(c('shiny', 'rmarkdown', 'DT'), repos='https://mirrors.tuna.tsinghua.edu.cn/CRAN/')" && \
 	R -e "install.packages('BiocManager', repos='https://mirrors.tuna.tsinghua.edu.cn/CRAN/')" && \
@@ -40,8 +39,12 @@ RUN R -e "install.packages(c('shiny', 'rmarkdown', 'DT'), repos='https://mirrors
 	R -e "install.packages(c('magrittr'), repos='http://mirrors.tuna.tsinghua.edu.cn/CRAN/')" && \
 	R -e "install.packages(c('scales'), repos='http://mirrors.tuna.tsinghua.edu.cn/CRAN/')"
 
+RUN cp -R /usr/local/lib/R/site-library/shiny/examples/* /srv/shiny-server/ && \
+	chown shiny:shiny /var/lib/shiny-server
+
 RUN echo "GITHUB_PAT=8ef1xxxxxxx50930dxxxx5d9e4982" >>~/.Renviron && \
 	echo "export PATH=$PATH:/dockerbin" >> ~/.bashrc
+
 
 ADD passwd /etc/
 ADD group /etc/
