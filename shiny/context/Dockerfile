@@ -1,4 +1,4 @@
-FROM rocker/r-ver:4.0.3 
+FROM rocker/r-ver:4.0.0 
 
 MAINTAINER Zan Yuan <seqyuan@gmail.com>
 ENV LANG=en_US.UTF-8
@@ -28,11 +28,11 @@ RUN wget --no-verbose https://download3.rstudio.org/ubuntu-14.04/x86_64/VERSION 
     gdebi -n ss-latest.deb && \
     rm -f version.txt ss-latest.deb && \
     . /etc/environment && \
-    R -e "install.packages(c('shiny', 'rmarkdown'), repos='$MRAN')" && \
     cp -R /usr/local/lib/R/site-library/shiny/examples/* /srv/shiny-server/ && \
     chown shiny:shiny /var/lib/shiny-server
 
-RUN R -e "install.packages('BiocManager', repos='https://mirrors.tuna.tsinghua.edu.cn/CRAN/')" && \
+RUN R -e "install.packages(c('shiny', 'rmarkdown', 'DT'), repos='https://mirrors.tuna.tsinghua.edu.cn/CRAN/')" && \
+	R -e "install.packages('BiocManager', repos='https://mirrors.tuna.tsinghua.edu.cn/CRAN/')" && \
 	R -e "install.packages('devtools', repos='https://mirrors.tuna.tsinghua.edu.cn/CRAN/')" && \
 	R -e "install.packages(c('Seurat'), repos='http://mirrors.tuna.tsinghua.edu.cn/CRAN/')" && \
 	R -e "install.packages(c('shinyFiles'), repos='http://mirrors.tuna.tsinghua.edu.cn/CRAN/')" && \	
