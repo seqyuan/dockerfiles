@@ -8,12 +8,12 @@ RUN apt-get update && apt-get install -y \
     gdebi-core \
     pandoc \
     pandoc-citeproc \
-    libcurl4-gnutls-dev \
+	libcurl4-gnutls-dev \
     libcairo2-dev \
     libxt-dev \
     xtail \
     libssl-dev \
-    libcurl4-openssl-dev \
+#    libcurl4-openssl-dev \
     build-essential \
     libxml2-dev \
     libhdf5-dev \
