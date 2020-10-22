@@ -46,8 +46,8 @@ RUN echo "GITHUB_PAT=8ef1xxxxxxx50930dxxxx5d9e4982" >>~/.Renviron && \
 	echo "export PATH=$PATH:/dockerbin" >> ~/.bashrc
 
 
-ADD passwd /etc/
-ADD group /etc/
+#ADD passwd /etc/
+#ADD group /etc/
 
 EXPOSE 3838
 
