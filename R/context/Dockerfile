@@ -33,7 +33,7 @@ RUN echo "options(BioC_mirror='https://mirrors.tuna.tsinghua.edu.cn/bioconductor
 		echo "options('repos' = c(CRAN='https://mirrors.tuna.tsinghua.edu.cn/CRAN/'))" >> ~/.Rprofile
 
 RUN R -e "install.packages(c('ggplot2', 'rmarkdown', 'DT', 'ggupset', 'devtools', 'BiocManager'), repos='https://mirrors.tuna.tsinghua.edu.cn/CRAN/')" 
-RUN	R -e "BiocManager::install('clusterProfiler', 'enrichplot', 'DOSE', 'msigdbr', 'ReactomePA', 'org.Hs.eg.db', 'org.Mm.eg.db')"
+RUN R -e "BiocManager::install(c('clusterProfiler', 'enrichplot', 'DOSE', 'msigdbr', 'ReactomePA', 'org.Hs.eg.db', 'org.Mm.eg.db'))"
 
 RUN echo "GITHUB_PAT=8ef1xxxxxxx50930dxxxx5d9e4982" >>~/.Renviron 
 
