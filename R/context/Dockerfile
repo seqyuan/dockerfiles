@@ -35,7 +35,9 @@ RUN echo "options(BioC_mirror='https://mirrors.tuna.tsinghua.edu.cn/bioconductor
 RUN R -e "install.packages(c('ggplot2', 'rmarkdown', 'DT', 'ggupset', 'devtools', 'BiocManager'), repos='https://mirrors.tuna.tsinghua.edu.cn/CRAN/')" 
 RUN R -e "BiocManager::install(c('clusterProfiler', 'enrichplot', 'DOSE', 'msigdbr', 'ReactomePA', 'org.Hs.eg.db', 'org.Mm.eg.db'))"
 
-RUN echo "GITHUB_PAT=8ef1xxxxxxx50930dxxxx5d9e4982" >>~/.Renviron 
+RUN R -e "BiocManager::install(c('DESeq2','DEGseq'))"
+
+RUN echo "GITHUB_PAT=8ef1xxxxxxx50930dxxxx5d9e4982" >>~/.Renviron
 
 #ADD passwd /etc/
 #ADD group /etc/
