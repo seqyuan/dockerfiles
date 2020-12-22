@@ -1,10 +1,11 @@
 BASEDIR=$(CURDIR)
 contextDir=$(CURDIR)/context
 dockerfile=Dockerfile
-imagename=alpine
-TAG=v0.0.1
+imagename=R
+TAG=v4.0.3
 
-dockerHub=registry.cn-hangzhou.aliyuncs.com/seqyuan
+#dockerHub=registry.cn-hangzhou.aliyuncs.com/seqyuan
+dockerHub=seqyuan
 
 build:
 	sudo docker build -t $(dockerHub)/$(imagename):$(TAG) -f $(contextDir)/$(dockerfile) $(contextDir)
