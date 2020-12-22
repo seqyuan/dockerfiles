@@ -1,4 +1,4 @@
-FROM rocker/r-ver:4.0.0 
+FROM rocker/r-ver:4.0.3
 
 MAINTAINER Zan Yuan <seqyuan@gmail.com>
 ENV LANG=en_US.UTF-8
@@ -33,9 +33,8 @@ RUN echo "options(BioC_mirror='https://mirrors.tuna.tsinghua.edu.cn/bioconductor
 		echo "options('repos' = c(CRAN='https://mirrors.tuna.tsinghua.edu.cn/CRAN/'))" >> ~/.Rprofile
 
 RUN R -e "install.packages(c('ggplot2', 'rmarkdown', 'DT', 'ggupset', 'devtools', 'BiocManager'), repos='https://mirrors.tuna.tsinghua.edu.cn/CRAN/')" 
-RUN R -e "BiocManager::install(c('clusterProfiler', 'enrichplot', 'DOSE', 'msigdbr', 'ReactomePA', 'org.Hs.eg.db', 'org.Mm.eg.db'))"
+RUN R -e "BiocManager::install(c('clusterProfiler', 'enrichplot', 'DOSE', 'msigdbr', 'ReactomePA', 'org.Hs.eg.db', 'org.Mm.eg.db', 'DESeq2', 'DEGseq'))"
 
-RUN R -e "BiocManager::install(c('DESeq2','DEGseq'))"
 
 RUN echo "GITHUB_PAT=8ef1xxxxxxx50930dxxxx5d9e4982" >>~/.Renviron
 
