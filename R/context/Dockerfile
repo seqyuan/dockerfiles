@@ -38,8 +38,8 @@ RUN R -e "BiocManager::install(c('clusterProfiler', 'enrichplot', 'DOSE', 'msigd
 
 RUN echo "GITHUB_PAT=8ef1xxxxxxx50930dxxxx5d9e4982" >>~/.Renviron
 
-#ADD passwd /etc/
-#ADD group /etc/
+ADD passwd /etc/
+ADD group /etc/
 
 #ENV PATH $PATH
 
