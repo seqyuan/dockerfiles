@@ -47,8 +47,8 @@ RUN echo "GITHUB_PAT=8ef1xxxxxxx50930dxxxx5d9e4982" >>~/.Renviron && \
 
 RUN R -e "install.packages(c('shinythemes'), repos='https://mirrors.tuna.tsinghua.edu.cn/CRAN/')" 
 RUN R -e "install.packages(c('shinydashboard'), repos='https://mirrors.tuna.tsinghua.edu.cn/CRAN/')" 
-#ADD passwd /etc/
-#ADD group /etc/
+ADD passwd /etc/
+ADD group /etc/
 
 EXPOSE 3838
 
