@@ -1,4 +1,4 @@
-FROM rocker/r-ver:4.0.0 
+FROM rocker/r-ver:4.0.0
 
 MAINTAINER Zan Yuan <seqyuan@gmail.com>
 ENV LANG=en_US.UTF-8
@@ -45,8 +45,11 @@ RUN cp -R /usr/local/lib/R/site-library/shiny/examples/* /srv/shiny-server/ && \
 RUN echo "GITHUB_PAT=8ef1xxxxxxx50930dxxxx5d9e4982" >>~/.Renviron && \
 	echo "export PATH=$PATH:/dockerbin" >> ~/.bashrc
 
-RUN R -e "install.packages(c('shinythemes'), repos='https://mirrors.tuna.tsinghua.edu.cn/CRAN/')" 
-RUN R -e "install.packages(c('shinydashboard'), repos='https://mirrors.tuna.tsinghua.edu.cn/CRAN/')" 
+RUN R -e "BiocManager::install(c('ComplexHeatmap','clusterProfiler', 'enrichplot', 'DOSE', 'msigdbr', 'ReactomePA', 'org.Hs.eg.db', 'org.Mm.eg.db', 'DESeq2', 'DEGseq'))"
+
+RUN R -e "install.packages(c('patchwork','shinythemes','shinydashboard','ggrepel','ggplot2','ggupset'), repos='https://mirrors.tuna.tsinghua.edu.cn/CRAN/')" 
+
+
 ADD passwd /etc/
 ADD group /etc/
 
