@@ -30,9 +30,10 @@ RUN wget --no-verbose https://download3.rstudio.org/ubuntu-14.04/x86_64/VERSION 
     . /etc/environment
 
 
-RUN R -e "install.packages(c('shiny', 'rmarkdown', 'DT'), repos='https://mirrors.tuna.tsinghua.edu.cn/CRAN/')" && \
-	R -e "install.packages(c('BiocManager','devtools','shinyFiles','Seurat','ggsci','magrittr','scales','patchwork','shinythemes','shinydashboard','ggrepel','ggplot2','ggupset'), repos='https://mirrors.tuna.tsinghua.edu.cn/CRAN/')" && \
-	R -e "BiocManager::install(c('ComplexHeatmap','clusterProfiler', 'enrichplot', 'DOSE', 'msigdbr', 'ReactomePA', 'org.Hs.eg.db', 'org.Mm.eg.db', 'DESeq2', 'DEGseq'))"
+RUN R -e "install.packages(c('shiny', 'rmarkdown', 'DT','BiocManager','ggplot2','shinydashboard','shinythemes','ggrepel'), repos='https://mirrors.tuna.tsinghua.edu.cn/CRAN/')" && \
+    R -e "options(BioC_mirror="https://mirrors.tuna.tsinghua.edu.cn/bioconductor")" && \
+    R -e "BiocManager::install(c('DESeq2', 'DEGseq'))"
+
 
 RUN cp -R /usr/local/lib/R/site-library/shiny/examples/* /srv/shiny-server/ && \
 	chown shiny:shiny /var/lib/shiny-server
