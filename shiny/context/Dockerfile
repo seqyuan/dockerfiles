@@ -30,9 +30,9 @@ RUN wget --no-verbose https://download3.rstudio.org/ubuntu-14.04/x86_64/VERSION 
     . /etc/environment
 
 
-RUN R -e "install.packages(c('shiny', 'rmarkdown', 'DT','BiocManager','ggplot2','shinydashboard','shinythemes','ggrepel'), repos='https://mirrors.tuna.tsinghua.edu.cn/CRAN/')" && \
-    R -e "options(BioC_mirror="https://mirrors.tuna.tsinghua.edu.cn/bioconductor")" && \
-    R -e "BiocManager::install(c('DESeq2', 'DEGseq'))"
+RUN R -e "install.packages(c('shiny', 'rmarkdown', 'DT','BiocManager','ggplot2','shinydashboard','shinythemes','ggrepel','devtools','patchwork'), repos='https://mirrors.tuna.tsinghua.edu.cn/CRAN/')" && \
+    R -e "options(BioC_mirror='https://mirrors.tuna.tsinghua.edu.cn/bioconductor')" && \
+    R -e "BiocManager::install(c('ComplexHeatmap','DESeq2', 'DEGseq'))"
 
 
 RUN cp -R /usr/local/lib/R/site-library/shiny/examples/* /srv/shiny-server/ && \
