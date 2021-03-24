@@ -34,6 +34,7 @@ RUN R -e "install.packages(c('shiny', 'rmarkdown', 'DT','BiocManager','ggplot2',
     R -e "options(BioC_mirror='https://mirrors.tuna.tsinghua.edu.cn/bioconductor')" && \
     R -e "BiocManager::install(c('ComplexHeatmap','DESeq2', 'DEGseq'))"
 
+RUN R -e "BiocManager::install('ComplexHeatmap')"
 
 RUN cp -R /usr/local/lib/R/site-library/shiny/examples/* /srv/shiny-server/ && \
 	chown shiny:shiny /var/lib/shiny-server
