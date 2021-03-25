@@ -36,6 +36,8 @@ RUN R -e "install.packages(c('shiny', 'rmarkdown', 'DT','BiocManager','ggplot2',
 
 RUN R -e "BiocManager::install('ComplexHeatmap')"
 
+RUN R -e "BiocManager::install(c('clusterProfiler', 'enrichplot', 'DOSE', 'msigdbr', 'ReactomePA', 'org.Hs.eg.db', 'org.Mm.eg.db'))"
+
 RUN cp -R /usr/local/lib/R/site-library/shiny/examples/* /srv/shiny-server/ && \
 	chown shiny:shiny /var/lib/shiny-server
 
