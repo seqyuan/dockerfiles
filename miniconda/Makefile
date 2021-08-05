@@ -1,7 +1,7 @@
 BASEDIR=$(CURDIR)
 contextDir=$(CURDIR)/context
 dockerfile=Dockerfile
-imagename=python3
+imagename=miniconda3
 TAG=scrublet
 
 dockerHub=seqyuan
