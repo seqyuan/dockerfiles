@@ -2,11 +2,10 @@ FROM continuumio/miniconda3:latest
 
 MAINTAINER Yuan Zan <seqyuan@gmail.com>
 
-#ADD DoubletDetection-master /tmp
+ADD DoubletDetection-master /tmp/DoubletDetection
 
 RUN python -m pip install --upgrade pip && \
-		git clone https://github.com/JonathanShor/DoubletDetection.git
-		cd ./DoubletDetection && pip3 install . && \
+		cd /tmp/DoubletDetection && pip3 install . && \
 		pip install scrublet && \
 		pip install pandas && \
 		pip install scipy
