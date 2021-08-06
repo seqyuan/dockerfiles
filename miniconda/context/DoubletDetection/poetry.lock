@@ -843,7 +843,7 @@ version = "0.52.0"
 description = "compiling Python code using LLVM"
 category = "main"
 optional = false
-python-versions = ">=3.6,<3.9"
+python-versions = ">=3.6,<4.9"
 
 [package.dependencies]
 llvmlite = ">=0.35.0,<0.36"
