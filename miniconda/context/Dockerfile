@@ -3,7 +3,8 @@ FROM continuumio/miniconda3:latest
 MAINTAINER Yuan Zan <seqyuan@gmail.com>
 
 ADD DoubletDetection-master.zip /tmp
-RUN yum install zip && cd /tmp && unzip DoubletDetection-master.zip && cd DoubletDetection-master && pip3 install . && \
+
+RUN apt-get install zip && cd /tmp && unzip DoubletDetection-master.zip && cd DoubletDetection-master && pip3 install . && \
 
 RUN python -m pip install --upgrade pip && \
 	pip install scrublet && \
