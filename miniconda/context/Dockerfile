@@ -2,8 +2,7 @@ FROM continuumio/miniconda3:latest
 
 MAINTAINER Yuan Zan <seqyuan@gmail.com>
 
-ADD DoubletDetection-master /tmp/DoubletDetection
-
+COPY DoubletDetection-master /tmp/DoubletDetection/
 RUN python -m pip install --upgrade pip && \
 		cd /tmp/DoubletDetection && pip3 install . && \
 		pip install scrublet && \
