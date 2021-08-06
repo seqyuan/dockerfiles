@@ -2,7 +2,9 @@ FROM continuumio/miniconda3:latest
 
 MAINTAINER Yuan Zan <seqyuan@gmail.com>
 
-COPY DoubletDetection /tmp/DoubletDetection/
+WORKDIR /app
+
+COPY ./DoubletDetection /tmp/DoubletDetection/
 RUN python -m pip install --upgrade pip && \
 		cd /tmp/DoubletDetection && pip3 install . && \
 		pip install scrublet && \
