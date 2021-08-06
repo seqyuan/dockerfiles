@@ -47,3 +47,5 @@ ping:x:999:
 nogroup:x:65533:
 nobody:x:65534:
 bioinfo:x:511:zanyuan
+bioinfo:x:511:mengchengyao
+bioinfo:x:511:yuezhao
