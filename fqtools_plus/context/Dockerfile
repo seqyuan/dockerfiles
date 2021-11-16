@@ -4,6 +4,7 @@ MAINTAINER Yuan Zan <seqyuan@gmail.com>
 
 WORKDIR /bin
 
+
 RUN yum install -y make gcc unzip && \
 		curl -o pigz-2.4.tar.gz http://zlib.net/pigz/pigz-2.4.tar.gz && \
 		curl -o zlib-1.2.11.tar.gz http://www.zlib.net/zlib-1.2.11.tar.gz && \
@@ -19,4 +20,7 @@ RUN yum install -y make gcc unzip && \
 
 ADD passwd /etc/
 ADD group /etc/
+
+RUN groupadd -r seqyuan && useradd -r -g seqyuan seqyuan
+USER seqyuan
 

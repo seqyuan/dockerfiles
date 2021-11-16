@@ -4,7 +4,8 @@ dockerfile=Dockerfile
 imagename=fqtools_plus
 TAG=v1.2.0
 
-dockerHub=registry.cn-hangzhou.aliyuncs.com/seqyuan
+#dockerHub=registry.cn-hangzhou.aliyuncs.com/seqyuan
+dockerHub=seqyuan
 
 build:
 	sudo docker build -t $(dockerHub)/$(imagename):$(TAG) -f $(contextDir)/$(dockerfile) $(contextDir)
