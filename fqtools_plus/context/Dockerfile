@@ -21,6 +21,6 @@ RUN yum install -y make gcc unzip && \
 ADD passwd /etc/
 ADD group /etc/
 
-RUN groupadd -r seqyuan && useradd -r -g seqyuan seqyuan
-USER seqyuan
+#RUN groupadd -r seqyuan && useradd -r -g seqyuan seqyuan
+#USER seqyuan
 
