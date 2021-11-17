@@ -21,6 +21,9 @@ RUN yum install -y make gcc unzip && \
 ADD passwd /etc/
 ADD group /etc/
 
+ADD DownloadOssFile /bin/
+ADD uploadLargeFile /bin/
+
 #RUN groupadd -r seqyuan && useradd -r -g seqyuan seqyuan
 #USER seqyuan
 
