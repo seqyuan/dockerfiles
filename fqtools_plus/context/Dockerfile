@@ -23,7 +23,7 @@ ADD group /etc/
 
 ADD DownloadOssFile /bin/
 ADD uploadLargeFile /bin/
-
+ADD Makefile_oss_filer /bin/
 #RUN groupadd -r seqyuan && useradd -r -g seqyuan seqyuan
 #USER seqyuan
 
