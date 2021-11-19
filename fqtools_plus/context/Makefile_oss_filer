@@ -3,8 +3,8 @@ filter:
 	DownloadOssFile -i $(rawFq_r1) -o $(rawFq_r1) && echo download_$(rawFq_r1)_finish && \
 	DownloadOssFile -i $(rawFq_r2) -o $(rawFq_r2) && echo download_$(rawFq_r2)_finish && \
 	fqtools_plus filter --i 33 --c 50 --m 1 --polyN G --adapt1 GATCGGAAGAGCACACGTCTGAACTCCAGTCAC --adapt2 AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA $(rawFq_r1) $(rawFq_r2) $(cleanFq_R1) $(cleanFq_R2) && echo filter_finish && \
-	uploadLargeFile -i $(cleanFq_R1) -o $(cleanFq_R1) echo upload_$(cleanFq_R1)_finish && \
-	uploadLargeFile -i $(cleanFq_R2) -o $(cleanFq_R2) echo upload_$(cleanFq_R2)_finish && \
+	uploadLargeFile -i $(cleanFq_R1) -o $(cleanFq_R1) && echo upload_$(cleanFq_R1)_finish && \
+	uploadLargeFile -i $(cleanFq_R2) -o $(cleanFq_R2) && echo upload_$(cleanFq_R2)_finish && \
 	uploadLargeFile -i $(cleanFq_R1).stat -o $(cleanFq_R1).stat && \
 	uploadLargeFile -i $(cleanFq_R1).report -o $(cleanFq_R1).report && \
 	uploadLargeFile -i $(cleanFq_R2).report -o $(cleanFq_R2).report && \
