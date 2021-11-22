@@ -8,4 +8,4 @@ filter:
 	uploadLargeFile -i $(cleanFq_R1).stat -o $(cleanFq_R1).stat && \
 	uploadLargeFile -i $(cleanFq_R1).report -o $(cleanFq_R1).report && \
 	uploadLargeFile -i $(cleanFq_R2).report -o $(cleanFq_R2).report && \
-	rm $(rawFq_r1) $(rawFq_r2) && echo LLAP
+	rm $(rawFq_r1) $(rawFq_r2) $(cleanFq_R1) $(cleanFq_R2) && echo LLAP
