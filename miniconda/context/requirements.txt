@@ -1,0 +1,12 @@
+pandas
+scipy
+datatable
+pyBigWig
+hicstraw
+fithic
+seaborn
+pysam
+bx-python
+cooler
+scanpy
+
