@@ -7,7 +7,20 @@ WORKDIR /app
 COPY ./requirements.txt /tmp
 
 RUN apt-get update && \
-		apt-get install -y make gcc g++ unzip && \
+		apt-get install -y make gcc g++ unzip libcurl4-openssl-dev \
+		pandoc \
+		pandoc-citeproc \
+		libcurl4-gnutls-dev \
+		libcairo2-dev \
+		libxt-dev \
+		xtail \
+		libssl-dev \
+		build-essential \
+		libxml2-dev \
+		libhdf5-dev \
+		libudunits2-dev \
+		imagemagick \
+		wget && \
 		python -m pip install --upgrade pip && \
 		cd /tmp && pip install -r requirements.txt
 
