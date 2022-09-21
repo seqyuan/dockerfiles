@@ -2,7 +2,7 @@ pandas
 scipy
 datatable
 pyBigWig
-hicstraw
+hic-straw
 fithic
 seaborn
 pysam
