@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY ./requirements.txt /tmp
 
-RUN apk add gcc g++ make unzip && \
+RUN yum install -y make gcc g++ unzip && \
 		python -m pip install --upgrade pip && \
 		cd /tmp && pip install -r requirements.txt
 
