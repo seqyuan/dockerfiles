@@ -4,10 +4,12 @@ MAINTAINER Yuan Zan <seqyuan@gmail.com>
 
 WORKDIR /app
 
-#COPY ./DoubletDetection /tmp/DoubletDetection/
 COPY ./requirements.txt /tmp
 
-RUN python -m pip install --upgrade pip && cd /tmp && pip install -r requirements.txt
+RUN apk add gcc g++ make unzip && \
+		python -m pip install --upgrade pip && \
+		cd /tmp && pip install -r requirements.txt
+
 #cd /tmp/DoubletDetection && pip3 install . && \
 
 #ADD seqyuan_doublets.py /usr/bin
