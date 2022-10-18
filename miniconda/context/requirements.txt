@@ -9,4 +9,13 @@ pysam
 bx-python
 cooler
 scanpy
-
+hic2cool
+cooltools
+HiCExplorer
+HiCMatrix
+hicpeaks
+html5lib
+jupyter
+MACS2
+scikit-learn
+neoloop
