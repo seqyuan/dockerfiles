@@ -1,5 +1,6 @@
 pandas
 scipy
+Cython
 datatable
 pyBigWig
 hic-straw
