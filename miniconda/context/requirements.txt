@@ -17,7 +17,6 @@ bx-python
 cooler
 scanpy
 hic2cool
-cooltools
 HiCExplorer
 HiCMatrix
 hicpeaks
