@@ -1,6 +1,12 @@
 pandas
 scipy
-Cython
+cython
+scikit-learn
+scikit-image
+joblib
+bioframe
+multiprocess
+numba
 datatable
 pyBigWig
 hic-straw
@@ -18,5 +24,4 @@ hicpeaks
 html5lib
 jupyter
 MACS2
-scikit-learn
 neoloop
