@@ -28,6 +28,7 @@ RUN apt-get update && \
 		python -m pip install --upgrade pip && \
 		pip install -r requirements.txt
 
+COPY ./requirements_2.txt /app
 RUN pip install -r requirements_2.txt
 
 #cd /tmp/DoubletDetection && pip3 install . && \
